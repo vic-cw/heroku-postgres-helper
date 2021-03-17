@@ -13,6 +13,8 @@ public class HerokuPostgresHelper {
         return "jdbc:postgresql://" + databaseFullUri.getHost()
             + ':' + databaseFullUri.getPort() + databaseFullUri.getPath()
             + "?user=" + databaseFullUri.getUserInfo().split(":")[0]
-            + "&password=" + databaseFullUri.getUserInfo().split(":")[1];
+            + "&password=" + databaseFullUri.getUserInfo().split(":")[1]
+            + "&ssl=true"
+            + "&sslfactory=org.postgresql.ssl.NonValidatingFactory";
     }
 }
